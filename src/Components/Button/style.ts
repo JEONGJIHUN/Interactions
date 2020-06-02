@@ -31,14 +31,6 @@ export const Button = styled.button<{ bgColor: BUTTON_COLOR }>`
   }) => (bgColor === White ? white.color : def.color)};
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
-  /* transition: transform 0.4s; */
-  /* will-change: transform; */
-  /* transform-style: preserve-3d;
-  transform: perspective(440px) rotateX(calc(var(--rx, 0) * 1deg))
-    rotateY(calc(var(--ry, 0) * 1deg)) translateZ(0);
-  &:hover {
-    transition: transform 0.16s;
-  } */
   &.success {
     & i {
       transform: scale(0);
@@ -90,6 +82,7 @@ export const Icon = styled.div`
   height: 14px;
   margin: 8px 16px 0 0;
 `;
+
 export const Cannon = styled.div<{ bgColor: BUTTON_COLOR }>`
   position: relative;
   width: 24px;

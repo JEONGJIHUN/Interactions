@@ -14,18 +14,19 @@ const particles = (
   maxAngle: number
 ) => {
   const colors = ["#FFFF04", "#EA4C89", "#892AB8", "#4AF2FD"];
+  const { random } = gsap.utils;
   for (let i = quantity - 1; i >= 0; i--) {
     // gsap.registerPlugin(Physics2DPlugin);
-    const angle = gsap.utils.random(minAngle, maxAngle);
-    const velocity = gsap.utils.random(70, 140);
+    const angle = random(minAngle, maxAngle);
+    const velocity = random(70, 140);
     const dot = document.createElement("div");
-    dot.style.setProperty("--b", colors[Math.floor(gsap.utils.random(0, 4))]);
+    dot.style.setProperty("--b", colors[Math.floor(random(0, 4))]);
     parent.appendChild(dot);
     gsap.set(dot, {
       opacity: 0,
       x,
       y,
-      scale: gsap.utils.random(0.4, 0.7),
+      scale: random(0.4, 0.7),
     });
     gsap
       .timeline({
@@ -45,8 +46,8 @@ const particles = (
         dot,
         {
           duration: 1.8,
-          rotationX: `-=${gsap.utils.random(720, 1440)}`,
-          rotationZ: `+=${gsap.utils.random(720, 1440)}`,
+          rotationX: `-=${random(720, 1440)}`,
+          rotationZ: `+=${random(720, 1440)}`,
           physics2D: {
             angle,
             velocity,
